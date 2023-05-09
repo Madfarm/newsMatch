@@ -4,10 +4,13 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faList } from "@fortawesome/free-solid-svg-icons"
 
 export default function Nav() {
+    const isLoggedIn = false;
+
     return (
+        <>
         <nav className={styles.Nav}>
             <div className={styles.navSection} id="navLogo">
-                <Link href="/">Home</Link>
+                <Link href="/">News Match</Link>
             </div>
 
             <div className={styles.navSection} id="navLinks">
@@ -23,8 +26,22 @@ export default function Nav() {
 
 
             <div className={styles.navSection} id="navProfile">
-                <Link href="/">Profile</Link>
+                {isLoggedIn ?
+                    <Link href="/logout">Log Out</Link>
+                :
+                    <Link href="/login">Login</Link>
+                }
             </div>
         </nav>
+        <nav className={styles.mobileNav}>
+                <div>
+
+                </div>
+
+                <div>
+                    
+                </div>
+        </nav>
+        </>
     )
 }
