@@ -1,11 +1,13 @@
+"use client"
 import Link from "next/link"
 import styles from './Nav.module.css'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faList } from "@fortawesome/free-solid-svg-icons"
+import { useUser } from "@auth0/nextjs-auth0/client"
 
 export default function Nav() {
     const isLoggedIn = false;
-    console.log(process.env.AUTH_CLIENT_ID)
+    const { user, error, isLoading } = useUser();
 
     return (
         <>
@@ -27,10 +29,16 @@ export default function Nav() {
 
 
             <div className={styles.navSection} id="navProfile">
-                {isLoggedIn ?
-                    <Link href="/logout">Log Out</Link>
+                {user && !isLoading ?
+                    <div>
+                        <p>Hi {user.name}</p>
+                    <a href="/api/auth/logout">Logout</a>
+                    </div>
                 :
-                    <Link href="/login">Login</Link>
+                
+                <a href="/api/auth/login">Login/Signup</a>
+                
+                
                 }
             </div>
         </nav>
