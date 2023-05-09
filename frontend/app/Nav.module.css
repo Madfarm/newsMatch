@@ -1,0 +1,22 @@
+.Nav {
+    display: flex;
+    width: 100%;
+    border-bottom: 1px solid rgb(255,255,255, 0.2);
+
+    background-color: rgb(5,10,24);
+}
+
+.Nav a {
+    text-decoration: none;
+    color: white;
+}
+
+.navSection {
+    display: flex;
+    padding: 3rem 2rem;
+    gap: 1rem;
+    border-left: 1px solid rgb(255,255,255, 0.2);
+
+    align-items: center;
+    justify-content: center;
+}

@@ -1,0 +1,47 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #242424;
+    color: white;
+
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+
+    overflow: hidden;
+}
+
+a {
+    text-decoration: none;
+    color: aliceblue;
+}
+
+#navLogo,
+#navLinks {
+    flex-basis: calc(100%/3);
+}
+
+#navProfile,
+#navLists {
+    flex-grow: 1;
+}
+
+#navLogo {
+    justify-content: flex-start;
+}
+
+#navLogo>a {
+    font-size: 2rem;
+}
+
+#navLists {
+    gap: 3rem;
+}
+
+#navLinks {
+    gap: 6rem;
+}

@@ -2,8 +2,8 @@
 
 export default function HomePage(){
     return (
-        <div>
-        asdasd
-        </div>
+        <main>
+            <h1>Hello world!</h1>
+        </main>
     )
 }
