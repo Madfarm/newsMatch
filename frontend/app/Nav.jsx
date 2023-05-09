@@ -5,6 +5,7 @@ import { faList } from "@fortawesome/free-solid-svg-icons"
 
 export default function Nav() {
     const isLoggedIn = false;
+    console.log(process.env.AUTH_CLIENT_ID)
 
     return (
         <>
@@ -39,7 +40,7 @@ export default function Nav() {
                 </div>
 
                 <div>
-                    
+
                 </div>
         </nav>
         </>

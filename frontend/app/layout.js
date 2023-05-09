@@ -5,6 +5,7 @@ import { config } from '@fortawesome/fontawesome-svg-core'
 import '@fortawesome/fontawesome-svg-core/styles.css'
 config.autoAddCss = false
 
+import { Auth0Provider } from "@auth0/auth0-react";
 
 export const metadata = {
   title: 'Next.js',
@@ -15,8 +16,16 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body>
-        <Nav />
-        {children}
+        <Auth0Provider
+          domain={process.env.AUTH_DOMAIN}
+          clientId={process.env.AUTH_CLIENT_ID}
+          authorizationParams={{
+            redirect_uri: window.location.origin
+          }}
+        >
+          <Nav />
+          {children}
+        </Auth0Provider>
       </body>
     </html>
   )
