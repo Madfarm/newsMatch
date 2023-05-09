@@ -1,15 +1,15 @@
 const express = require('express');
 const router = express.Router();
 
-
+const userCtrl = require('../controllers/users')
 
 router.route('/')
-.get((req,res)=> res.send("Hitting user index route"))
-.post((req,res)=> res.send("Hitting user create route"))
+.get(userCtrl.index)
+.post(userCtrl.create)
 
 
 router.route('/:id')
-.get((req,res)=> res.send("Hitting user show route"))
+.get(userCtrl.show)
 
 
 
