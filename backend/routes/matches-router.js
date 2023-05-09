@@ -1,10 +1,10 @@
 const express = require('express')
 const router = express.Router()
 
-
+const matchCtrl =  require('../controllers/matches')
 
 router.route('/user/:id/matches')
-.post((req,res)=> res.send("Hitting match create route"))
+.post(matchCtrl.create)
 
 
 
