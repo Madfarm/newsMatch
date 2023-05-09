@@ -32,7 +32,7 @@ MVP Features:
 >Page transitions
 
 
-These two features I'm not if they should be MVP or not
+These two features I'm not sure if they should be MVP or not
 >Delete articles from user's list
 >Article filtering via category(category is provided by the API)
 
