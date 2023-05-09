@@ -5,12 +5,13 @@ https://trello.com/b/hHe1W5VM/p4-planning
 
 
 Stack:
-React        - Frontend
-Nextjs       - Rendering framework
-
-Express/Node - Backend
-FramerMotion - Page transitions
-Currents API
+```
+- React         | Frontend
+- Nextjs        | Rendering framework
+- Express/Node  | Backend
+- FramerMotion  | Page transitions
+- Currents API
+```
 
 
 
@@ -21,20 +22,30 @@ Some testing framework because none of my portfolio projects demonstrate that I 
 
 
 MVP Features:
->Currents API will provide articles across categories
->Users can see a title, image, and description for each article
->Each article will have a link to the actual article on its original site
+> Currents API will provide articles across categories
+> 
+> Users can see a title, image, and description for each article
+> 
+> Each article will have a link to the actual article on its original site
+> 
 >Authentication(I'm thinking Google 0Auth for this one)
+>
 >Users can add articles to their own list
+>
 >Animated carousel for viewing articles
+>
 >2 Models, User and Articles. Users will have a list field that is an array of articles
+>
 >Mobile responsive
+>
 >Page transitions
 
 
 These two features I'm not sure if they should be MVP or not
 >Delete articles from user's list
+>
 >Article filtering via category(category is provided by the API)
+>
 
 
 
