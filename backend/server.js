@@ -5,7 +5,7 @@ const express = require('express')
 const morgan = require('morgan')
 const cors = require('cors')
 
-
+const userRouter = require('./routes/user-router');
 
 
 const app = express()
@@ -20,7 +20,7 @@ app.use(cors())
 app.use(morgan("dev"))
 
 // routers will go here
-
+app.use('/user', userRouter);
 
 
 app.get('/', (req,res)=>res.send('Hitting home route'))
