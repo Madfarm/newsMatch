@@ -93,12 +93,13 @@ main>article>.art-nav {
 .art-img {
     grid-column: 1 / span 2;
     overflow: hidden;
-    max-height: 600px;
+    max-height: 400px;
     max-width: 100%;
 
 }
 
 .art-title {
+    max-height: 150px;
     display: flex;
     flex-flow: row wrap;
     align-items: center;

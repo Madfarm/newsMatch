@@ -12,7 +12,7 @@ import { useState } from "react";
 
 
 export default function ArticlesPage(props) {
-    // const articles = props.params.articles.news
+    const articles = props.params.articles.news
     const [carouselIdx, setCarouselIdx] = useState(10)
     const [movement, setMovement] = useState(null);
 
@@ -29,20 +29,20 @@ export default function ArticlesPage(props) {
         }
     }
 
-    // const article = articles[carouselIdx];
+    const article = articles[carouselIdx];
 
     return (
         <main>
-            <article className={movement == 'right' ? "slide-right" : "slide-left"}>
+            <article key={article.id} className={movement == 'right' ? "slide-right" : "slide-left"}>
                 <div className="article-section art-img">
-                    img
+                    {article?.image != 'None' ? <img src={article.image} /> : <h1>oops</h1>}
                 </div>
-                <div className="article-section art-desc">desc</div>
+                <div className="article-section art-desc">{article?.description}</div>
 
-                <a >
+                <a href={article.url}>
                     <div className="article-section art-title">
 
-                        <h2>title</h2>
+                        <h2>{article.title}</h2>
                         <FontAwesomeIcon icon={faUpRightFromSquare} size={"2xl"} />
 
                     </div>
