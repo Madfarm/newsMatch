@@ -49,7 +49,7 @@ export default function ArticlesPage(props) {
                 </a>
                 <div className="article-section art-nav">
                     <div onClick={() => handleNavClick('left')}>
-                        <FontAwesomeIcon  icon={faArrowLeft} style={{ color: "#ffffff" }} size={"2xl"} />
+                        <FontAwesomeIcon id="left-arrow" icon={faArrowLeft} style={{ color: "#ffffff" }} size={"2xl"} />
                     </div>
                     <div>
                         <FontAwesomeIcon icon={faArrowDown} style={{ color: "#ffffff" }} size={"2xl"} />

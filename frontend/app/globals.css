@@ -48,6 +48,7 @@ a {
 
 
 
+/* Articles page styling below */
 main {
     flex-grow: 1;
     background: linear-gradient(-45deg, rgb(5,10,24, 0.5), #040824, #020c52, rgb(5,10,24));
@@ -136,11 +137,14 @@ main>article>.art-nav {
     background-color: rgb(255, 255, 255, 0.1);
 }
 
-
-#downArrow {
-    border-left: 1px solid rgb(255, 255, 255, 0.1);
-    border-right: 1px solid rgb(255, 255, 255, 0.1);
+#left-arrow {
+    transition: transform 0.5s ease-in-out;
 }
+
+.art-nav > div:hover > #left-arrow{
+    transform: translateX(-50px);
+}
+
 
 @keyframes slideright {
     0% { transform: translateX(-1000px); }
