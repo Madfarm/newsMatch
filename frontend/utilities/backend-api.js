@@ -1,6 +1,6 @@
-BASE_URL = 'https://newsmatch-backend.herokuapp.com/user'
+const BASE_URL = 'https://newsmatch-backend.herokuapp.com/user'
 
-export async function create(newMatch, mongoID){
+export async function create(newMatch, authID){
     const options = {
         method: "POST",
         headers: {
@@ -9,7 +9,7 @@ export async function create(newMatch, mongoID){
         body: JSON.stringify(newMatch)
     }
 
-    let url = `${BASE_URL}/${mongoID}/matches`
+    let url = `${BASE_URL}/${authID}/matches`
 
     try {
         const res = await fetch(url,options);
@@ -26,7 +26,7 @@ export async function create(newMatch, mongoID){
     }
 }
 
-export async function detail(mongoID){
+export async function detail(authID){
     const options = { 
         method: "GET" 
     }

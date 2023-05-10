@@ -6,6 +6,8 @@ import { faArrowRight, faArrowLeft, faUpRightFromSquare, faArrowDown } from "@fo
 import { useState } from "react";
 import { useUser } from "@auth0/nextjs-auth0/client";
 
+import { create } from '../../utilities/backend-api';
+
 
 
 
@@ -19,6 +21,23 @@ export default function ArticlesPage(props) {
 
     const { user } = useUser();
 
+    async function handleMatchCreate(){
+        if(!user) return
+        if(!article) return
+
+        let parsedArticle = {
+            title: article.title,
+            description: article.description,
+            url: article.url,
+            image: article.image
+        }
+
+        try {
+            await create(parsedArticle, user.sub)
+        } catch(err){
+            console.log(err)
+        }
+    }
 
 
     function handleNavClick(direction) {
@@ -50,7 +69,6 @@ export default function ArticlesPage(props) {
 
     return (
         <main>
-            {user && <p>{user.sub}</p>}
             <article key={article.id} className={movement == 'right' ? "slide-right" : "slide-left"}>
                 <div className="article-section art-img">
                     {article?.image != 'None' ? <img src={article.image} /> : <h1>oops</h1>}
@@ -69,7 +87,7 @@ export default function ArticlesPage(props) {
                     <div onClick={() => handleNavClick('left')}>
                         <FontAwesomeIcon id="left-arrow" icon={faArrowLeft} style={{ color: "#ffffff" }} size={"2xl"} />
                     </div>
-                    <div>
+                    <div onClick={handleMatchCreate}>
                         <p>Add to matches</p>
                         <FontAwesomeIcon id="down-arrow" icon={faArrowDown} style={{ color: "#ffffff" }} size={"2xl"} />
                     </div>
