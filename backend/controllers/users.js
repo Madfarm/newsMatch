@@ -24,7 +24,7 @@ async function index(req,res){
 
 async function show(req,res){
     try {
-        res.status(200).json(await User.findById(req.params.id))
+        res.status(200).json(await User.findOne({auth_id: req.params.id}))
     } catch(err){
         res.status(400).json({error: err.message})
     }

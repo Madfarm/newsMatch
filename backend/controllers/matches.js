@@ -6,7 +6,7 @@ module.exports = {
 
 async function create(req,res){
     try {
-        let user = await User.findById(req.params.id);
+        let user = await User.findOne({auth_id: req.params.id});
         
         await user.matches.push(req.body)
 
