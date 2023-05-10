@@ -52,7 +52,8 @@ export default function ArticlesPage(props) {
                         <FontAwesomeIcon id="left-arrow" icon={faArrowLeft} style={{ color: "#ffffff" }} size={"2xl"} />
                     </div>
                     <div>
-                        <FontAwesomeIcon icon={faArrowDown} style={{ color: "#ffffff" }} size={"2xl"} />
+                        <p>Add to matches</p>
+                        <FontAwesomeIcon id="down-arrow" icon={faArrowDown} style={{ color: "#ffffff" }} size={"2xl"} />
                     </div>
                     <div onClick={() => handleNavClick('right')}>
                         <FontAwesomeIcon id="right-arrow" icon={faArrowRight} style={{ color: "#ffffff" }} size={"2xl"} />

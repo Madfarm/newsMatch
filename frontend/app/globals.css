@@ -133,6 +133,8 @@ main>article>.art-nav {
     border-right: 1px solid rgb(255, 255, 255, 0.1);
 }
 
+
+/* Carousel controls animations */
 .art-nav > div:hover {
     background-color: rgb(255, 255, 255, 0.1);
 }
@@ -153,6 +155,27 @@ main>article>.art-nav {
     transform: translateX(5vw);
 }
 
+.art-nav > div > p{
+   position: absolute;
+   opacity: 0;
+
+   transition: opacity 400ms ease;
+}
+
+.art-nav > div:hover > p{
+    opacity: 1;
+
+}
+
+.art-nav > div:hover > #down-arrow{
+    animation: down-arrow 0.5s linear infinite
+}
+
+@keyframes down-arrow {
+    0% {transform: translateY(-3vh);}
+   50% {transform: translateY(3vh);}
+  100% {transform: translateY(6vh);}
+}
 
 @keyframes slideright {
     0% { transform: translateX(-1000px); }
