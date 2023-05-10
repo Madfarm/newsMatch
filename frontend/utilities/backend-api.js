@@ -31,7 +31,7 @@ export async function detail(authID){
         method: "GET" 
     }
 
-    const url = `${BASE_URL}/${id}`
+    const url = `${BASE_URL}/${authID}`
 
     try {
         const res = await fetch(url,options);
