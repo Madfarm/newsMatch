@@ -8,8 +8,7 @@ const articleSchema = new mongoose.Schema({
 }, {timestamps: true})
 
 const userSchema = new mongoose.Schema({
-    sub: String,
-    name: String,
+    email: String,
     matches: [articleSchema]
 }, {timestamps: true})
 
