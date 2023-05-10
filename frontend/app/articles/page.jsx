@@ -4,6 +4,7 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faArrowRight, faArrowLeft, faUpRightFromSquare, faArrowDown } from "@fortawesome/free-solid-svg-icons"
 import { useState } from "react";
+import { useUser } from "@auth0/nextjs-auth0/client";
 
 
 
@@ -16,8 +17,9 @@ export default function ArticlesPage(props) {
     const [carouselIdx, setCarouselIdx] = useState(0)
     const [movement, setMovement] = useState(null);
 
+    const { user } = useUser();
 
-    console.log(articles.length)
+
 
     function handleNavClick(direction) {
        
@@ -48,6 +50,7 @@ export default function ArticlesPage(props) {
 
     return (
         <main>
+            {user && <p>{user.sub}</p>}
             <article key={article.id} className={movement == 'right' ? "slide-right" : "slide-left"}>
                 <div className="article-section art-img">
                     {article?.image != 'None' ? <img src={article.image} /> : <h1>oops</h1>}
