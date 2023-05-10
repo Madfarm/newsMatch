@@ -18,7 +18,7 @@ export default function Nav() {
             </div>
 
             <div className={styles.navSection} id="navLinks">
-                <Link href="/">Matches</Link>
+                <Link href="/matches">Matches</Link>
                 <Link href="/articles">Articles</Link>
             </div>
 
