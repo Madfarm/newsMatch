@@ -31,7 +31,7 @@ export default function Nav() {
             <div className={styles.navSection} id="navProfile">
                 {user && !isLoading ?
                     <div>
-                        <p>Hi, {user.nickname}!</p>
+                        <p>Hi,{user.nickname}!</p>
                     <a className={styles.logButton} href="/api/auth/logout">Logout</a>
                     </div>
                 :

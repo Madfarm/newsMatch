@@ -46,6 +46,10 @@ a {
     gap: 6rem;
 }
 
+#navProfile {
+    padding: 3rem 1rem;
+}
+
 
 
 /* Articles page styling below */

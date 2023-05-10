@@ -13,19 +13,34 @@ import { useState } from "react";
 
 export default function ArticlesPage(props) {
     const articles = props.params.articles.news
-    const [carouselIdx, setCarouselIdx] = useState(10)
+    const [carouselIdx, setCarouselIdx] = useState(0)
     const [movement, setMovement] = useState(null);
 
 
-
+    console.log(articles.length)
 
     function handleNavClick(direction) {
+       
+
         if (direction == "right") {
+            setMovement(direction)
+
+            if (carouselIdx == articles.length - 1) {
+                setCarouselIdx(0)
+                return 
+            }
+
             setCarouselIdx(carouselIdx + 1)
-            setMovement(direction)
+            
         } else {
-            setCarouselIdx(carouselIdx - 1)
             setMovement(direction)
+
+            if (carouselIdx == 0){
+                setCarouselIdx(articles.length - 1)
+                return 
+            }
+
+            setCarouselIdx(carouselIdx - 1)
         }
     }
 

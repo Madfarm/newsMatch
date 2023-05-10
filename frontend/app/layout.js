@@ -9,10 +9,11 @@ config.autoAddCss = false
 import {UserProvider} from '@auth0/nextjs-auth0/client'
 
 const getArticle = async () =>{
-  var url = 'https://api.currentsapi.services/v1/latest-news?langauge=us&apiKey=_nzV85Gpfc5q7Qq_QuQ1rLNUTSKIh9r7uOtBD-ZLnczq0qNm';
+  var url = 'https://api.currentsapi.services/v1/search?langauge=us&page_size=200&apiKey=_nzV85Gpfc5q7Qq_QuQ1rLNUTSKIh9r7uOtBD-ZLnczq0qNm';
 
   const res = await fetch(url);
-  return await res.json()
+  const data = await res.json()
+  return data
 }
 
 export default async function RootLayout({ children, params }) {
