@@ -45,3 +45,117 @@ a {
 #navLinks {
     gap: 6rem;
 }
+
+
+
+main {
+    flex-grow: 1;
+    background: linear-gradient(-45deg, rgb(5,10,24, 0.5), #040824, #020c52, rgb(5,10,24));
+	background-size: 400% 400%;
+	animation: gradient 15s ease infinite;
+}
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+main>article {
+    display: grid;
+    height: 100%;
+
+    grid-template-columns: 3fr 1fr 2fr;
+    grid-template-rows: 2fr 1fr;
+}
+
+main>article>.article-section {
+    height: 100%;
+}
+
+main>article>.art-desc,
+main>article>.art-nav {
+    border-left: 1px solid rgb(255, 255, 255, 0.1);
+}
+
+main>article>.art-title,
+main>article>.art-nav {
+    border-top: 1px solid rgb(255, 255, 255, 0.1);
+}
+
+
+.art-img {
+    grid-column: 1 / span 2;
+    overflow: hidden;
+    max-height: 600px;
+    max-width: 100%;
+
+}
+
+.art-title {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: space-evenly;
+
+    padding: 1em;
+}
+
+.art-img>img {
+    height: 100%;
+    max-width: 100%;
+    max-height: 100%;
+    width: 100%;
+}
+
+.art-nav {
+    grid-column: 2 / span 2;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.art-nav > div {
+    flex-grow: 1;
+    height: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border-left: 1px solid rgb(255, 255, 255, 0.1);
+    border-right: 1px solid rgb(255, 255, 255, 0.1);
+}
+
+.art-nav > div:hover {
+    background-color: rgb(255, 255, 255, 0.1);
+}
+
+
+#downArrow {
+    border-left: 1px solid rgb(255, 255, 255, 0.1);
+    border-right: 1px solid rgb(255, 255, 255, 0.1);
+}
+
+@keyframes slideright {
+    0% { transform: translateX(-1000px); }
+  100% { transform: none; }
+}
+
+.slide-right {
+    animation: slideright 0.3s;
+}
+
+@keyframes slideleft {
+    0% { transform: translateX(1000px); }
+  100% { transform: none; }
+}
+
+.slide-left {
+    animation: slideleft 0.3s;
+}
