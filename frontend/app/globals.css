@@ -142,7 +142,15 @@ main>article>.art-nav {
 }
 
 .art-nav > div:hover > #left-arrow{
-    transform: translateX(-50px);
+    transform: translateX(-5vw);
+}
+
+#right-arrow {
+    transition: transform 0.5s ease-in-out;
+}
+
+.art-nav > div:hover > #right-arrow{
+    transform: translateX(5vw);
 }
 
 
