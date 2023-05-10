@@ -9,7 +9,6 @@
 
 .Nav a {
     text-decoration: none;
-    color: white;
 }
 
 .navSection {
@@ -21,3 +20,23 @@
     align-items: center;
     justify-content: center;
 }
+
+.logButton {
+    font-weight: bold;
+
+    background-color: rgb(255, 255, 255, 0.15);
+    backdrop-filter: blur(5px);
+
+    border: 1px solid white;
+    border-radius: 10%;
+    padding: 1vh;
+    box-shadow: 1px 1px 3px blue;
+
+    transition: all 400ms ease;
+}
+
+.logButton:hover {
+   background-color: white;
+   color: black;
+   scale: 1.1;
+}   

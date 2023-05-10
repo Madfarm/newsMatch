@@ -32,11 +32,11 @@ export default function Nav() {
                 {user && !isLoading ?
                     <div>
                         <p>Hi, {user.nickname}!</p>
-                    <a href="/api/auth/logout">Logout</a>
+                    <a className={styles.logButton} href="/api/auth/logout">Logout</a>
                     </div>
                 :
                 
-                <a href="/api/auth/login">Login/Signup</a>
+                <a className={styles.logButton} href="/api/auth/login">Login/Signup</a>
                 
                 
                 }
