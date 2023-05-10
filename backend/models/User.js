@@ -8,7 +8,7 @@ const articleSchema = new mongoose.Schema({
 }, {timestamps: true})
 
 const userSchema = new mongoose.Schema({
-    email: String,
+    auth_id: String,
     matches: [articleSchema]
 }, {timestamps: true})
 

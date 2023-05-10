@@ -1,3 +1,5 @@
+BASE_URL = 'https://newsmatch-backend.herokuapp.com/user'
+
 export async function create(newMatch, mongoID){
     const options = {
         method: "POST",
@@ -7,8 +9,10 @@ export async function create(newMatch, mongoID){
         body: JSON.stringify(newMatch)
     }
 
+    let url = `${BASE_URL}/${mongoID}/matches`
+
     try {
-        const res = await fetch("placeholder url",options);
+        const res = await fetch(url,options);
 
         if(res.ok){
             return await res.json()
