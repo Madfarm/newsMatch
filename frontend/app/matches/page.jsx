@@ -19,7 +19,7 @@ export default async function MatchesPage(){
     let matches = await getMatches(user)
     return (
         <section className={styles.container}>
-            {matches.map((article)=> {
+            {matches?.map((article)=> {
                 return (
                     <a href={article.url}>
                         <div className={styles.card}>
