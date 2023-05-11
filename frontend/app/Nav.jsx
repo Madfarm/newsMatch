@@ -10,45 +10,45 @@ export default function Nav() {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
     const { user, error, isLoading } = useUser();
 
-    function handleHamburger(){
+    function handleHamburger() {
         setMobileMenuOpen(!mobileMenuOpen);
     }
 
     return (
         <>
-        <nav className={styles.Nav}>
-            <div className={styles.navSection} id="navLogo">
-                <Link href="/">News Match</Link>
-            </div>
+            <nav className={styles.Nav}>
+                <div className={styles.navSection} id="navLogo">
+                    <Link href="/">News Match</Link>
+                </div>
 
-            <div className={styles.navSection} id="navLinks">
-                <Link href="/matches">Matches</Link>
-                <Link href="/articles">Articles</Link>
-            </div>
+                <div className={styles.navSection} id="navLinks">
+                    <Link href="/matches">Matches</Link>
+                    <Link href="/articles">Articles</Link>
+                </div>
 
-            <div className={styles.navSection} id="navLists">
-                <Link href="/articles"><FontAwesomeIcon icon={faList} /></Link>
-                <Link href="/articles"><FontAwesomeIcon icon={faList} style={{ color: "#ffffff" }} /></Link>
-                <Link href="/articles"><FontAwesomeIcon icon={faList} style={{ color: "#ffffff" }} /></Link>
-            </div>
+                <div className={styles.navSection} id="navLists">
+                    <Link href="/articles"><FontAwesomeIcon icon={faList} /></Link>
+                    <Link href="/articles"><FontAwesomeIcon icon={faList} style={{ color: "#ffffff" }} /></Link>
+                    <Link href="/articles"><FontAwesomeIcon icon={faList} style={{ color: "#ffffff" }} /></Link>
+                </div>
 
 
-            <div className={styles.navSection} id="navProfile">
-                {user && !isLoading ?
-                    
-                    <div>
-                        <p>Hi,{user.nickname}!</p>
-                    <a className={styles.logButton} href="/api/auth/logout">Logout</a>
-                    </div>
-                :
-                
-                <a className={styles.logButton} href="/api/auth/login">Login/Signup</a>
-                
-                
-                }
-            </div>
-        </nav>
-        <nav className={styles.mobileNav}>
+                <div className={styles.navSection} id="navProfile">
+                    {user && !isLoading ?
+
+                        <div>
+                            <p>Hi,{user.nickname}!</p>
+                            <a className={styles.logButton} href="/api/auth/logout">Logout</a>
+                        </div>
+                        :
+
+                        <a className={styles.logButton} href="/api/auth/login">Login/Signup</a>
+
+
+                    }
+                </div>
+            </nav>
+            <nav className={styles.mobileNav}>
                 <div className={styles.mobileSection} id="mobile-logo">
                     <Link href="/">News Match</Link>
                 </div>
@@ -57,29 +57,29 @@ export default function Nav() {
                     <p>MENU</p>
                     <FontAwesomeIcon icon={faBars} size={"2xl"} />
                 </div>
-        </nav>
+            </nav>
 
-        { mobileMenuOpen ?
-        <div className={styles.openHamburger}>
-            <Link href="/">Home</Link>
-            <Link href="/articles">Articles</Link>
-            
+            {mobileMenuOpen ?
+                <div className={styles.openHamburger}>
+                    <Link onClick={handleHamburger} href="/">Home</Link>
+                    <Link onClick={handleHamburger} href="/articles">Articles</Link>
 
-            {user && !isLoading ?
-            <>
-            <Link href="/matches">Matches</Link>
-            <a href="/api/auth/logout">Logout</a>
-            </>
 
-            :
-            <a href="/api/auth/login">Login/Signup</a>
+                    {user && !isLoading ?
+                        <>
+                            <Link onClick={handleHamburger} href="/matches">Matches</Link>
+                            <a href="/api/auth/logout">Logout</a>
+                        </>
+
+                        :
+                        <a href="/api/auth/login">Login/Signup</a>
+                    }
+
+                </div>
+
+                :
+                <></>
             }
-
-        </div>
-
-        :
-        <></>
-        }
         </>
     )
 }
