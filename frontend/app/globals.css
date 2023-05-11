@@ -46,6 +46,20 @@ a {
     padding: 3rem 1rem;
 }
 
+/* Mobile Nav ids */
+#mobile-logo {
+    justify-self: flex-start;
+    border: 1px solid red;
+
+    flex-basis: calc(100%/2);
+}
+
+#hamburger-container {
+    justify-self: flex-end;
+    border: 1px solid red;
+    flex-basis: calc(100%/2);
+}
+
 
 
 /* Articles page styling below */

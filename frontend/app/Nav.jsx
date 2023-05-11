@@ -45,11 +45,11 @@ export default function Nav() {
             </div>
         </nav>
         <nav className={styles.mobileNav}>
-                <div>
-
+                <div className={styles.navSection} id="mobile-logo">
+                    <Link href="/">News Match</Link>
                 </div>
 
-                <div>
+                <div className={styles.navSection} id="hamburger-container">
 
                 </div>
         </nav>
