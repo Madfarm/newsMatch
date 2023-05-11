@@ -68,7 +68,7 @@ export default function ArticlesPage(props) {
     const article = articles[carouselIdx];
 
     return (
-        <main>
+        <main id="article-page">
             <article key={article.id} className={movement == 'right' ? "slide-right" : "slide-left"}>
                 <div className="article-section art-img">
                     {article?.image != 'None' ? <img src={article.image} /> : <h1>oops</h1>}

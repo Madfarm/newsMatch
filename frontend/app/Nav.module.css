@@ -1,7 +1,7 @@
 .Nav {
     max-height: 15vh;
     display: flex;
-    width: 100%;
+    width: 100vw;
     border-bottom: 1px solid rgb(255,255,255, 0.2);
 
     background-color: rgb(5,10,24);

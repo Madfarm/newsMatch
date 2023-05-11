@@ -12,25 +12,12 @@
     border: 1px solid lightgray;
     border-radius: 1rem;
     display: grid;
-    grid-template-rows: 2fr 1fr 1fr;
-  }
-  
-  .cardImage {
-    align-items: center;
-    display: flex;
-    justify-content: center;
-
-    overflow:hidden;
-  }
-
-  .cardImage > img {
-    border-radius: 1rem 1rem 0 0;
-
-    max-width: 400px;
-    max-height: 600px;
+    grid-template-rows: 1fr 1fr;
   }
   
   .cardTitle {
+    border-radius: 1rem 1rem 0 0;
+
     background-color: #276074;
 
     color: white;

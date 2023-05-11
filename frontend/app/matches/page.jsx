@@ -22,13 +22,6 @@ export default async function MatchesPage(){
                 return (
                     <a href={article.url}>
                         <div className={styles.card}>
-                            <div className={styles.cardImage}>
-                            <img
-                                    src={article.image}
-                                    alt={article.title}
-                                />
-                            </div>
-
                             <div className={styles.cardTitle}>
                                 <h3>{article.title}</h3>
                             </div>

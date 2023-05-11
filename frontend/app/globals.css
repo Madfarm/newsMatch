@@ -8,11 +8,7 @@ body {
     background-color: #242424;
     color: white;
 
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
 
-    overflow: hidden;
 }
 
 a {
@@ -53,8 +49,8 @@ a {
 
 
 /* Articles page styling below */
-main {
-    flex-grow: 1;
+#article-page {
+    height: 85vh;
     background: linear-gradient(-45deg, rgb(5,10,24, 0.5), #040824, #020c52, rgb(5,10,24));
 	background-size: 400% 400%;
 	animation: gradient 15s ease infinite;
