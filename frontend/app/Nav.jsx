@@ -45,12 +45,12 @@ export default function Nav() {
             </div>
         </nav>
         <nav className={styles.mobileNav}>
-                <div className={styles.navSection} id="mobile-logo">
+                <div className={styles.mobileSection} id="mobile-logo">
                     <Link href="/">News Match</Link>
                 </div>
 
-                <div className={styles.navSection} id="hamburger-container">
-
+                <div className={styles.mobileSection} id="hamburger-container">
+                    <p>MENU</p>
                 </div>
         </nav>
         </>

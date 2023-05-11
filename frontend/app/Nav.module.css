@@ -2,9 +2,9 @@
     max-height: 15vh;
     display: flex;
     width: 100vw;
-    border-bottom: 1px solid rgb(255,255,255, 0.2);
+    border-bottom: 1px solid rgb(255, 255, 255, 0.2);
 
-    background-color: rgb(5,10,24);
+    background-color: rgb(5, 10, 24);
 }
 
 .Nav a {
@@ -15,7 +15,7 @@
     display: flex;
     padding: 3rem 2rem;
     gap: 1rem;
-    border-left: 1px solid rgb(255,255,255, 0.2);
+    border-left: 1px solid rgb(255, 255, 255, 0.2);
 
     align-items: center;
     justify-content: center;
@@ -36,9 +36,9 @@
 }
 
 .logButton:hover {
-   background-color: white;
-   color: black;
-   scale: 1.1;
+    background-color: white;
+    color: black;
+    scale: 1.1;
 }
 
 .mobileNav {
@@ -46,19 +46,33 @@
 }
 
 
-@media screen and (max-width: 800px){
-    .Nav {display: none}
+@media screen and (max-width: 800px) {
+    .Nav {
+        display: none
+    }
+
     .mobileNav {
         display: flex;
 
         max-height: 15vh;
         width: 100vw;
-        border-bottom: 1px solid rgb(255,255,255, 0.2);
-    
-        background-color: rgb(5,10,24);
+        border-bottom: 1px solid rgb(255, 255, 255, 0.2);
+
+        background-color: rgb(5, 10, 24);
     }
 
-    
+    .mobileSection {
+        display: flex;
+        height: 15vh;
+        gap: 1rem;
+        border-left: 1px solid rgb(255, 255, 255, 0.2);
 
-    
+        align-items: center;
+    }
+
+    .mobileSection > a {
+        padding-left: 4vw;
+        font-size: 2rem;
+    }
+
 }
