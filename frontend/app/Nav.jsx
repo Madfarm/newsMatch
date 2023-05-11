@@ -2,7 +2,7 @@
 import Link from "next/link"
 import styles from './Nav.module.css'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faList } from "@fortawesome/free-solid-svg-icons"
+import { faList, faBars } from "@fortawesome/free-solid-svg-icons"
 import { useUser } from "@auth0/nextjs-auth0/client"
 
 export default function Nav() {
@@ -51,6 +51,7 @@ export default function Nav() {
 
                 <div className={styles.mobileSection} id="hamburger-container">
                     <p>MENU</p>
+                    <FontAwesomeIcon icon={faBars} size={"2xl"} />
                 </div>
         </nav>
         </>

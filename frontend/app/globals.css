@@ -56,8 +56,12 @@ a {
 
 #hamburger-container {
     justify-self: flex-end;
-
     flex-basis: calc(100%/2);
+
+    display: flex;
+    justify-content: flex-end;
+
+    padding-right: 2rem;
 }
 
 
