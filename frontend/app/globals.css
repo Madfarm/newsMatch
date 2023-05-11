@@ -65,6 +65,50 @@ a {
 }
 
 
+/* Homepage styling below */
+#homepage {
+    height: 85vh;
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: space-evenly;
+
+
+    background-image: radial-gradient(
+        150vw,
+        #2b2b54,
+        transparent 50%
+    );
+}
+
+#homepage > h1 {
+    font-size: 7vh;
+    max-width: 30vw;
+}
+
+#homepage > p {
+    max-width: 70vw;
+}
+
+#get-started-btn {
+    height: 10vh;
+    width: 50vw;
+
+    border: 1px solid #2b2b54;
+    border-radius: 10px;
+
+    font-size: 3vh;
+
+    transition: all 400ms ease;
+}
+
+#get-started-btn:hover {
+    background-color: #040824;
+    color: white;
+    scale: 1.1;
+}
+
 
 /* Articles page styling below */
 #article-page {
@@ -212,4 +256,20 @@ main>article>.art-nav {
 
 .slide-left {
     animation: slideleft 0.3s;
+}
+
+
+
+@media screen and (max-width: 800px) {
+    #homepage {
+        background-image: radial-gradient(
+        150vw,
+        #2b2b54,
+        transparent 70%
+    );
+    }
+
+    #homepage > h1 {
+        max-width: 80vw;
+    }
 }
