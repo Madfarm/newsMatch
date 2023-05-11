@@ -74,4 +74,21 @@
         font-size: 2rem;
     }
 
+    .openHamburger {
+        position: fixed;
+
+        width: 100vw;
+        height: 100vh;
+        opacity: 0.9;
+        background-color: #242424;
+        z-index: 20;
+
+        display: flex;
+        flex-direction: column;
+
+        justify-content: center;
+        align-items: center;
+
+    }
+
 }

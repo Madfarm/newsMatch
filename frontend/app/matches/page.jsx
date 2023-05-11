@@ -4,6 +4,7 @@ import { detail } from '../../utilities/backend-api'
 import { useUser } from '@auth0/nextjs-auth0/client'
 import styles from './articles.module.css'
 
+
 async function getMatches(user){
     if(!user) return
 

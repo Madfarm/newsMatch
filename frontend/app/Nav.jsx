@@ -4,11 +4,15 @@ import styles from './Nav.module.css'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faList, faBars } from "@fortawesome/free-solid-svg-icons"
 import { useUser } from "@auth0/nextjs-auth0/client"
+import { useState } from "react";
 
 export default function Nav() {
-    const isLoggedIn = false;
+    const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
     const { user, error, isLoading } = useUser();
 
+    function handleHamburger(){
+        setMobileMenuOpen(!mobileMenuOpen);
+    }
 
     return (
         <>
@@ -49,11 +53,33 @@ export default function Nav() {
                     <Link href="/">News Match</Link>
                 </div>
 
-                <div className={styles.mobileSection} id="hamburger-container">
+                <div onClick={handleHamburger} className={styles.mobileSection} id="hamburger-container">
                     <p>MENU</p>
                     <FontAwesomeIcon icon={faBars} size={"2xl"} />
                 </div>
         </nav>
+
+        { mobileMenuOpen ?
+        <div className={styles.openHamburger}>
+            <Link href="/">Home</Link>
+            <Link href="/articles">Articles</Link>
+            
+
+            {user && !isLoading ?
+            <>
+            <Link href="/matches">Matches</Link>
+            <a href="/api/auth/logout">Logout</a>
+            </>
+
+            :
+            <a href="/api/auth/login">Login/Signup</a>
+            }
+
+        </div>
+
+        :
+        <></>
+        }
         </>
     )
 }
