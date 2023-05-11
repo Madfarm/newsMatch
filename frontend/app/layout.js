@@ -8,18 +8,18 @@ config.autoAddCss = false
 
 import {UserProvider} from '@auth0/nextjs-auth0/client'
 
-// const getArticle = async () =>{
-//   var url = 'https://api.currentsapi.services/v1/search?langauge=us&page_size=200&apiKey=_nzV85Gpfc5q7Qq_QuQ1rLNUTSKIh9r7uOtBD-ZLnczq0qNm';
+const getArticle = async () =>{
+  var url = 'https://api.currentsapi.services/v1/search?langauge=us&page_size=200&apiKey=_nzV85Gpfc5q7Qq_QuQ1rLNUTSKIh9r7uOtBD-ZLnczq0qNm';
 
-//   const res = await fetch(url);
-//   const data = await res.json()
-//   return data
-// }
+  const res = await fetch(url);
+  const data = await res.json()
+  return data
+}
 
 export default async function RootLayout({ children, params }) {
-  // const articles =  await getArticle();
+  const articles =  await getArticle();
 
-  // params.articles = articles;
+  params.articles = articles;
 
   return (
     <html lang="en">

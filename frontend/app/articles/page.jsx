@@ -69,7 +69,7 @@ export default function ArticlesPage(props) {
 
     return (
         <main id="article-page">
-            <article key={article.id} className={movement == 'right' ? "slide-right" : "slide-left"}>
+            <article key={article?.id}  className={movement == 'right' ? "slide-right" : "slide-left"}>
                 <div className="article-section art-img">
                     {article?.image != 'None' ? <img src={article.image} /> : <h1>oops</h1>}
                 </div>
@@ -80,7 +80,6 @@ export default function ArticlesPage(props) {
 
                         <h2>{article.title}</h2>
                         <FontAwesomeIcon icon={faUpRightFromSquare} size={"2xl"} />
-
                     </div>
                 </a>
                 <div className="article-section art-nav">

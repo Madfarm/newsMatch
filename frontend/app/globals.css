@@ -272,4 +272,47 @@ main>article>.art-nav {
     #homepage > h1 {
         max-width: 80vw;
     }
+
+
+    /* articles page */
+    main > article {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 2fr 1fr 1fr 2fr;
+    }
+
+    main>article>.article-section {
+        height: 100%;
+        border-top: 1px solid rgb(255, 255, 255, 0.1);
+        border-bottom: 1px solid rgb(255, 255, 255, 0.1);
+    }
+    .art-img {
+        grid-row: 1 / 1;
+        grid-column: 1 / span 2;
+
+    }
+    article > a {
+        grid-row: 2 / 2;
+        grid-column: 1 / span 2;
+
+    }
+
+    .art-title {
+        padding-left: 1vw;
+        overflow: hidden;
+    }
+
+    .art-title > h2 {
+        margin: 0;
+    }
+    
+
+    .art-desc {
+        grid-row: 3 / 3;
+        grid-column: 1 / span 2;
+    }
+    .art-nav {
+        grid-row: 4 / 4;
+        grid-column: 1 / span 2;  
+    }
+
 }
