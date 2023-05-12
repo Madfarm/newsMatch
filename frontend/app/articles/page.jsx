@@ -27,12 +27,22 @@ export default function ArticlesPage(props) {
     const [movement, setMovement] = useState(null);
 
     let articles = props.params.articles.news;
+    let article = articles[carouselIdx];
 
-
+    
     if (categoryState) {
-       articles = articles.filter((article) => article.category.includes(categoryState))
+        articles = articles.filter((article) => article.category.includes(categoryState))
+        
+        if (articles.length == 0) {
+            article = {
+                title: "Sorry, no articles in this category found",
+                description: "Try another category to find articles",
+                url : "",
+                image: '/defaultImage.jpg'
+            }
+        }
     }
-
+    
 
 
 
@@ -85,7 +95,6 @@ export default function ArticlesPage(props) {
     }
 
 
-    const article = articles[carouselIdx];
 
     return (
         <main id="article-page">
