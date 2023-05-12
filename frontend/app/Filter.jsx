@@ -1,24 +1,21 @@
 "use client"
 
-import { useState } from "react"
+
 import { useCategoryContext } from "../utilities/categoryContext"
 
 export default function Filter(props) {
     const { categoryState, setCategoryState } = useCategoryContext();
 
-    function handleSubmit(e, category){
-        e.preventDefault()
-
-        setCategoryState(category)
-    }
+ 
 
     function handleChange(e){
         setCategoryState(e.target.value)
     }
 
     return (
-        <form onSubmit={(e)=> handleSubmit(e, category)}>
+        <form>
             <select onChange={handleChange} value={categoryState}>
+                <option value="all">all</option>
                 <option value="regional">regional</option>
                 <option value="lifestyle">lifestyle</option>
                 <option value="business">business</option>
@@ -36,7 +33,6 @@ export default function Filter(props) {
                 <option value="food">food</option>
                 <option value="game">game</option>
             </select>
-            <button type="submit">Submit</button>
         </form>
     )
 }

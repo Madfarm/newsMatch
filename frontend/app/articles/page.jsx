@@ -26,33 +26,37 @@ export default function ArticlesPage(props) {
     const [carouselIdx, setCarouselIdx] = useState(0)
     const [movement, setMovement] = useState(null);
 
-    let articles = props.params.articles.news;
-    let article = articles[carouselIdx];
-
     
-    if (categoryState) {
+    let articles = props.params.articles.news;
+    let article;
+    
+
+    if (categoryState && categoryState != "all") {
         articles = articles.filter((article) => article.category.includes(categoryState))
         
-        if (articles.length == 0) {
-            article = {
-                title: "Sorry, no articles in this category found",
-                description: "Try another category to find articles",
-                url : "",
-                image: '/defaultImage.jpg'
-            }
+    } 
+
+
+    if (articles.length === 0) {
+        article = {
+            title: "Sorry, no articles in this category found",
+            description: "Try another category to find articles",
+            url : "",
+            image: '/defaultImage.jpg'
         }
+    } else {
+        article = articles[carouselIdx];
     }
     
-
+    
 
 
 
     const { user } = useUser();
-
+    
     async function handleMatchCreate() {
-        if (!article) return
-
         if(!user) router.push('/api/auth/login')
+        if (!article) return
         
         let parsedArticle = {
             title: article.title,
@@ -74,7 +78,7 @@ export default function ArticlesPage(props) {
 
         if (direction == "right") {
             setMovement(direction)
-
+            
             if (carouselIdx == articles.length - 1) {
                 setCarouselIdx(0)
                 return
@@ -89,7 +93,7 @@ export default function ArticlesPage(props) {
                 setCarouselIdx(articles.length - 1)
                 return
             }
-
+            
             setCarouselIdx(carouselIdx - 1)
         }
     }
