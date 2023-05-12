@@ -5,10 +5,14 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faList, faBars } from "@fortawesome/free-solid-svg-icons"
 import { useUser } from "@auth0/nextjs-auth0/client"
 import { useState } from "react";
+import { usePathname } from 'next/navigation'
 
 export default function Nav() {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
     const { user, error, isLoading } = useUser();
+    let pathname = usePathname()
+
+    
 
     function handleHamburger() {
         setMobileMenuOpen(!mobileMenuOpen);
@@ -22,8 +26,8 @@ export default function Nav() {
                 </div>
 
                 <div className={styles.navSection} id="navLinks">
-                    <Link href="/matches">Matches</Link>
-                    <Link href="/articles">Articles</Link>
+                    <Link className={pathname == "/matches" ? styles.activeLink : ""} href="/matches">Matches</Link>
+                    <Link className={pathname == "/articles" ? styles.activeLink : ""}  href="/articles">Articles</Link>
                 </div>
 
                 <div className={styles.navSection} id="navLists">

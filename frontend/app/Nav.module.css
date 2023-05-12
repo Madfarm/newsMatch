@@ -21,6 +21,11 @@
     justify-content: center;
 }
 
+.activeLink {
+    color: #b97acc;
+    scale: 1.5;
+}
+
 .logButton {
     font-weight: bold;
 
@@ -107,3 +112,4 @@
     }
 
 }
+
