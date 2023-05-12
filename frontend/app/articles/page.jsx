@@ -10,6 +10,7 @@ import { useUser } from "@auth0/nextjs-auth0/client";
 
 
 import { create } from '../../utilities/backend-api';
+import { redirect } from "next/dist/server/api-utils";
 
 
 
@@ -25,11 +26,9 @@ export default function ArticlesPage(props) {
     const { user } = useUser();
 
     async function handleMatchCreate() {
-        if (!user) return
         if (!article) return
 
-        console.log(article)
-
+        console.log('hello');
         let parsedArticle = {
             title: article.title,
             description: article.description,
@@ -77,11 +76,11 @@ export default function ArticlesPage(props) {
         <main id="article-page">
             <article key={article?.id} className={movement == 'right' ? "slide-right" : "slide-left"}>
                 <div className="article-section art-img">
-                    <img src={article?.image != 'None' ? article.image : '/defaultImage.jpg'} /> 
+                    <img src={article?.image != 'None' ? article.image : '/defaultImage.jpg'} />
                 </div>
                 <div className="article-section art-desc">{article?.description}</div>
 
-                <a href={article.url}>
+                <a href={article.url} target="_blank" rel="noopener noreferrer">
                     <div className="article-section art-title">
 
                         <h1 id="title">{article.title}</h1>
@@ -92,20 +91,30 @@ export default function ArticlesPage(props) {
                     <div onClick={() => handleNavClick('left')}>
                         <FontAwesomeIcon id="left-arrow" icon={faArrowLeft} style={{ color: "#ffffff" }} size={"2xl"} />
                     </div>
+
+
+
                     <Popup
+                        onClick={handleMatchCreate}
                         className="matchArrow"
                         trigger={open => (
-                            <div onClick={handleMatchCreate}>
-                                <p>Add to matches</p>
-                                <FontAwesomeIcon id="down-arrow" icon={faArrowDown} style={{ color: "#ffffff" }} size={"2xl"} />
+                            <div >
+                                <div onClick={handleMatchCreate}>
+                                    <p>Add to matches</p>
+                                    <FontAwesomeIcon id="down-arrow" icon={faArrowDown} style={{ color: "#ffffff" }} size={"2xl"} />
+                                </div>
                             </div>
                         )}
                         position="top center"
-                        contentStyle={{padding: "1vw", border: "1px solid gray"}}
+                        contentStyle={{ padding: "1vw", border: "1px solid gray" }}
                         closeOnDocumentClick
                     >
                         <span>It's a Match!</span>
                     </Popup>
+
+
+
+
                     <div onClick={() => handleNavClick('right')}>
                         <FontAwesomeIcon id="right-arrow" icon={faArrowRight} style={{ color: "#ffffff" }} size={"2xl"} />
                     </div>

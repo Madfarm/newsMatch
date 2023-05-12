@@ -253,14 +253,25 @@ main>article>.art-nav {
     transform: translateX(2vw);
 }
 
-.art-nav > div > p{
+.art-nav > div > div {
+    position: relative;
+
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.art-nav > div > div > p{
    position: absolute;
    opacity: 0;
 
    transition: opacity 400ms ease;
 }
 
-.art-nav > div:hover > p{
+.art-nav > div:hover > div > p{
     opacity: 1;
 
 }
@@ -281,7 +292,7 @@ main>article>.art-nav {
     animation: popup 1s linear forwards;
 }
 
-.art-nav > div:hover > #down-arrow{
+.art-nav > div:hover > div > #down-arrow{
     animation: down-arrow 0.5s linear infinite
 }
 
