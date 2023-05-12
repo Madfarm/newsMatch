@@ -7,10 +7,11 @@ import Popup from 'reactjs-popup';
 
 import { useState } from "react";
 import { useUser } from "@auth0/nextjs-auth0/client";
+import { useRouter } from "next/navigation";
 
 
 import { create } from '../../utilities/backend-api';
-import { redirect } from "next/dist/server/api-utils";
+import { redirect } from "next/navigation";
 
 
 
@@ -19,6 +20,8 @@ import { redirect } from "next/dist/server/api-utils";
 
 
 export default function ArticlesPage(props) {
+    const router = useRouter();
+
     const articles = props.params.articles.news
     const [carouselIdx, setCarouselIdx] = useState(0)
     const [movement, setMovement] = useState(null);
@@ -28,9 +31,7 @@ export default function ArticlesPage(props) {
     async function handleMatchCreate() {
         if (!article) return
 
-        if(!user){
-            window.location.href = 'https://news-match.vercel.app/api/auth/login'
-        }
+        if(!user) router.push('/api/auth/login')
         
         let parsedArticle = {
             title: article.title,
