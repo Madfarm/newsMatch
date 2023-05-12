@@ -230,6 +230,22 @@ main>article>.art-nav {
 
 }
 
+@keyframes popup {
+    0%   {
+        opacity: 1;
+        transform: scale(1);
+      }
+      100% {
+        transform: scale(0);
+        opacity: 0;
+        transform: translateY(3vh);
+      }
+}
+
+.matchArrow-content {
+    animation: popup 1s linear forwards;
+}
+
 .art-nav > div:hover > #down-arrow{
     animation: down-arrow 0.5s linear infinite
 }
@@ -315,4 +331,11 @@ main>article>.art-nav {
         grid-column: 1 / span 2;  
     }
 
+}
+
+
+@media screen and (min-height: 700px){
+    .art-img {
+        max-height: 575px;
+    }
 }
