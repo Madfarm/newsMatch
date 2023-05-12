@@ -8,6 +8,7 @@ import Popup from 'reactjs-popup';
 import { useState } from "react";
 import { useUser } from "@auth0/nextjs-auth0/client";
 import { useRouter } from "next/navigation";
+import { useCategoryContext } from "../../utilities/categoryContext";
 
 
 import { create } from '../../utilities/backend-api';
@@ -20,11 +21,21 @@ import { redirect } from "next/navigation";
 
 
 export default function ArticlesPage(props) {
+    const { categoryState } = useCategoryContext();
     const router = useRouter();
-
-    const articles = props.params.articles.news
     const [carouselIdx, setCarouselIdx] = useState(0)
     const [movement, setMovement] = useState(null);
+
+    let articles = props.params.articles.news;
+
+
+    if (categoryState) {
+       articles = articles.filter((article) => article.category.includes(categoryState))
+    }
+
+
+
+
 
     const { user } = useUser();
 
@@ -80,14 +91,14 @@ export default function ArticlesPage(props) {
         <main id="article-page">
             <article key={article?.id} className={movement == 'right' ? "slide-right" : "slide-left"}>
                 <div className="article-section art-img">
-                    <img src={article?.image != 'None' ? article.image : '/defaultImage.jpg'} />
+                    <img src={article?.image != 'None' ? article?.image : '/defaultImage.jpg'} />
                 </div>
                 <div className="article-section art-desc">{article?.description}</div>
 
-                <a href={article.url} target="_blank" rel="noopener noreferrer">
+                <a href={article?.url} target="_blank" rel="noopener noreferrer">
                     <div className="article-section art-title">
 
-                        <h1 id="title">{article.title}</h1>
+                        <h1 id="title">{article?.title}</h1>
                         <h1 id="goto-article">GO TO ARTICLE</h1>
                     </div>
                 </a>

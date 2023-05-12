@@ -6,13 +6,13 @@ import { faList, faBars } from "@fortawesome/free-solid-svg-icons"
 import { useUser } from "@auth0/nextjs-auth0/client"
 import { useState } from "react";
 import { usePathname } from 'next/navigation'
+import Filter from "./Filter"
 
-export default function Nav() {
+export default function Nav(props) {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
     const { user, error, isLoading } = useUser();
     let pathname = usePathname()
 
-    
 
     function handleHamburger() {
         setMobileMenuOpen(!mobileMenuOpen);
@@ -31,9 +31,7 @@ export default function Nav() {
                 </div>
 
                 <div className={styles.navSection} id="navLists">
-                    <Link href="/articles"><FontAwesomeIcon icon={faList} /></Link>
-                    <Link href="/articles"><FontAwesomeIcon icon={faList} style={{ color: "#ffffff" }} /></Link>
-                    <Link href="/articles"><FontAwesomeIcon icon={faList} style={{ color: "#ffffff" }} /></Link>
+                    {pathname == "/articles" && <Filter />}
                 </div>
 
 
