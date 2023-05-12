@@ -161,6 +161,7 @@ main>article>.art-nav {
 }
 
 .art-title {
+    color: white;
     max-height: 150px;
     display: flex;
     flex-flow: row wrap;
@@ -168,6 +169,16 @@ main>article>.art-nav {
     justify-content: space-evenly;
 
     padding: 1em;
+}
+
+.art-desc {
+    display: flex;
+    flex-direction: column;
+
+    justify-content: flex-end;
+    padding: 2vw;
+
+    color: #c7c3c9;
 }
 
 .art-img>img {
@@ -325,6 +336,9 @@ main>article>.art-nav {
     .art-desc {
         grid-row: 3 / 3;
         grid-column: 1 / span 2;
+
+        justify-content: center;
+        align-items: center;
     }
     .art-nav {
         grid-row: 4 / 4;
