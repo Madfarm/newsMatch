@@ -6,7 +6,10 @@ import styles from './articles.module.css'
 
 
 async function getMatches(user){
-    if(!user) return
+    if(!user) {
+        window.location.href = 'https://news-match.vercel.app/api/auth/login'
+        return
+    }
 
     let account = await detail(user.sub);
     return account.matches
