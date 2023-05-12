@@ -28,7 +28,10 @@ export default function ArticlesPage(props) {
     async function handleMatchCreate() {
         if (!article) return
 
-        console.log('hello');
+        if(!user){
+            window.location.href = 'https://news-match.vercel.app/api/auth/login'
+        }
+        
         let parsedArticle = {
             title: article.title,
             description: article.description,
