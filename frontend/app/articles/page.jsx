@@ -1,5 +1,6 @@
 "use client";
 
+
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faArrowRight, faArrowLeft, faUpRightFromSquare, faArrowDown } from "@fortawesome/free-solid-svg-icons"
 import Popup from 'reactjs-popup';
@@ -68,13 +69,14 @@ export default function ArticlesPage(props) {
         }
     }
 
+
     const article = articles[carouselIdx];
 
     return (
         <main id="article-page">
             <article key={article?.id} className={movement == 'right' ? "slide-right" : "slide-left"}>
                 <div className="article-section art-img">
-                    {article?.image != 'None' ? <img src={article.image} /> : <h1>oops</h1>}
+                    <img src={article?.image != 'None' ? article.image : '/defaultImage.jpg'} /> 
                 </div>
                 <div className="article-section art-desc">{article?.description}</div>
 
