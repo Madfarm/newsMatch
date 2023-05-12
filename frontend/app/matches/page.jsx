@@ -1,16 +1,14 @@
 "use client"
 
 import { detail } from '../../utilities/backend-api'
-import { useUser } from '@auth0/nextjs-auth0/client'
+import { useUser, withPageAuthRequired, WithPageAuthRequired } from '@auth0/nextjs-auth0/client'
 import styles from './articles.module.css'
+import { redirect } from 'next/navigation';
+
+
 
 
 async function getMatches(user){
-    if(!user) {
-        window.location.href = 'https://news-match.vercel.app/api/auth/login'
-        return
-    }
-
     let account = await detail(user.sub);
     return account.matches
 }
@@ -18,6 +16,8 @@ async function getMatches(user){
 
 export default async function MatchesPage(){
     const { user } = useUser();
+
+    if(!user) redirect('/api/auth/login')
 
     let matches = await getMatches(user)
     return (
@@ -45,3 +45,4 @@ export default async function MatchesPage(){
         </section>
     )
 }
+
