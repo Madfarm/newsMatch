@@ -171,6 +171,30 @@ main>article>.art-nav {
     padding: 1em;
 }
 
+.art-title > h1 {
+    font-size: 3vh;
+}
+
+.art-title > #goto-article {
+    opacity: 0;
+
+    transition: all 200ms ease;
+}
+
+#title {
+    transition: all 200ms ease;
+}
+
+.art-title:hover > #goto-article {
+    transform: translateY(-10vh);
+    opacity: 1;
+}
+
+.art-title:hover > #title {
+    transform: translateY(-10vh);
+    opacity: 0;
+}
+
 .art-desc {
     display: flex;
     flex-direction: column;

@@ -83,8 +83,8 @@ export default function ArticlesPage(props) {
                 <a href={article.url}>
                     <div className="article-section art-title">
 
-                        <h2>{article.title}</h2>
-                        <FontAwesomeIcon icon={faUpRightFromSquare} size={"2xl"} />
+                        <h1 id="title">{article.title}</h1>
+                        <h1 id="goto-article">GO TO ARTICLE</h1>
                     </div>
                 </a>
                 <div className="article-section art-nav">
