@@ -1,6 +1,7 @@
 # News Match
 ## A. Description
 > [Deployed Link](https://news-match.vercel.app/)
+
 News Match is a mobile responsive full-stack web application that allows users to sift through news articles with the user experience of swiping through a dating app like Tinder. It takes full advantage of Nextjs's ability to pre-fetch and cache data before the user comes to the site to create an article-scrolling experience that has 0 loading screens.
 
     News Match is a coding project built by Anthony Scott in 5 days
@@ -49,8 +50,8 @@ News Match is a mobile responsive full-stack web application that allows users t
 
 >### On Mobile
 ![Landing Page](assets/imgs/mobileLanding.png)
-![Articles Page](assets/imgs/mobileLanding.png)
-![Matches Page](assets/imgs/mobileLanding.png)
+![Articles Page](assets/imgs/mobileArticles.png)
+![Matches Page](assets/imgs/mobileMatches.png)
 ![Menu](assets/imgs/mobileMenu.png)
 
 
