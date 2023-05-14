@@ -387,4 +387,8 @@ main>article>.art-nav {
     .art-img {
         max-height: 575px;
     }
+
+    #homepage > p {
+        font-size: 20px;
+    }
 }
