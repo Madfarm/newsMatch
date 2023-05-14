@@ -1,12 +1,15 @@
 "use client"
 
-import { detail } from '../../utilities/backend-api'
+import { destroyMatch, detail } from '../../utilities/backend-api'
 import { useUser, withPageAuthRequired, WithPageAuthRequired } from '@auth0/nextjs-auth0/client'
-import styles from './matches.module.css'
-import { redirect } from 'next/navigation';
+import styles from './matches.module.css';
+import { redirect, useRouter } from 'next/navigation';
 
 
-
+async function deleteMatch(user, articleid){
+    console.log('1')
+    return await destroyMatch(user.sub, articleid)
+}
 
 async function getMatches(user){
     let account = await detail(user.sub);
@@ -15,16 +18,25 @@ async function getMatches(user){
 
 
 export default async function MatchesPage(){
+    const router = useRouter();
     const { user } = useUser();
 
     if(!user) redirect('/api/auth/login')
 
     let matches = await getMatches(user)
+
+
+    async function handleClick(user, articleid){
+        let deletedMatch = await deleteMatch(user, articleid)
+        router.refresh();
+    }
+
+
     return (
         <section className={styles.container}>
             {matches?.map((article)=> {
                 return (
-                    <a href={article.url}>
+                    <a onClick={()=>handleClick(user, article._id)} href={article.url} target="_blank" rel="noopener noreferrer">
                         <div className={styles.card}>
                             <div className={styles.cardTitle}>
                                 <h3>{article.title}</h3>

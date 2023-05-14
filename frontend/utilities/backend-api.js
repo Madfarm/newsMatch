@@ -47,3 +47,25 @@ export async function detail(authID){
         return err
     }
 }
+
+export async function destroyMatch(authid, id) {
+    const options = { 
+        method: "DELETE" 
+    }
+
+    const url = `${BASE_URL}/${authid}/matches/${id}`
+
+    try {
+        const res = await fetch(url,options);
+
+        if(res.ok){
+            return await res.json()
+            
+        } else {
+            throw new Error('Invalid Request')
+        }
+
+    } catch(err){
+        return err
+    }
+}
