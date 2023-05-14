@@ -33,9 +33,11 @@ export default async function MatchesPage(){
 
 
     return (
+        <>
+        {matches.length != 0 ?
         <section className={styles.container}>
             {matches?.map((article)=> {
-                return (
+                (
                     <a onClick={()=>handleClick(user, article._id)} href={article.url} target="_blank" rel="noopener noreferrer">
                         <div className={styles.card}>
                             <div className={styles.cardTitle}>
@@ -48,13 +50,16 @@ export default async function MatchesPage(){
 
                         </div>
                     </a>
-
                 )
             })
-
             }
-
         </section>
+            :
+        <div style={{position: "absolute", textAlign: "center", width: "100vw"}}>
+            <h1>You have no matches, head to the articles page to make some</h1>
+        </div>
+        }
+        </>
     )
 }
 
