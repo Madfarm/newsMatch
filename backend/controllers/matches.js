@@ -19,9 +19,7 @@ async function create(req,res){
 
 async function destroy(req,res){
     try {
-        let user = await User.findOne({auth_id: req.body.authId});
-
-        console.log(user.matches);
+        let user = await User.findOne({auth_id: req.params.authid});
         
         await user.matches.remove({_id: req.params.id})
 
