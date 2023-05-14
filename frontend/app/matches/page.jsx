@@ -2,7 +2,7 @@
 
 import { detail } from '../../utilities/backend-api'
 import { useUser, withPageAuthRequired, WithPageAuthRequired } from '@auth0/nextjs-auth0/client'
-import styles from './articles.module.css'
+import styles from './matches.module.css'
 import { redirect } from 'next/navigation';
 
 
