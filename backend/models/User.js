@@ -9,6 +9,7 @@ const articleSchema = new mongoose.Schema({
 
 const userSchema = new mongoose.Schema({
     auth_id: String,
+    email: String,
     matches: [articleSchema]
 }, {timestamps: true})
 
