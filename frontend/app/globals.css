@@ -164,11 +164,11 @@ main>article>.art-nav {
     color: white;
     max-height: 150px;
     display: flex;
-    flex-flow: row wrap;
-    align-items: center;
-    justify-content: space-evenly;
+    flex-direction: column;
+    justify-content: center;
 
-    padding: 1em;
+    padding-left: 2vw;
+    padding-top: 5vh;
 }
 
 .art-title > h1 {
