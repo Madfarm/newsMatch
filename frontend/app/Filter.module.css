@@ -1,0 +1,17 @@
+.selector {
+    appearance: button;
+    background-color: #2b2b54;
+    color: white;
+
+    border-radius: 10%;
+    padding: 0.5vw;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+}
+
+.label {
+    align-self: center;
+}

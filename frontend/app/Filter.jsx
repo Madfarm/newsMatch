@@ -1,5 +1,7 @@
 "use client"
 
+import styles from './Filter.module.css'
+
 
 import { useCategoryContext } from "../utilities/categoryContext"
 
@@ -13,8 +15,9 @@ export default function Filter(props) {
     }
 
     return (
-        <form>
-            <select onChange={handleChange} value={categoryState}>
+        <form className={styles.form}>
+            <label className={styles.label}>Categories</label>
+            <select className={styles.selector} onChange={handleChange} value={categoryState}>
                 <option value="all">all</option>
                 <option value="regional">regional</option>
                 <option value="lifestyle">lifestyle</option>
