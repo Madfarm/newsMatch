@@ -21,11 +21,9 @@ async function destroy(req,res){
     try {
         let user = await User.findOne({auth_id: req.body.authId});
         
-        // await user.matches.push(req.body)
+        await user.matches.remove(req.params.id)
 
-        // res.status(201).json(await user.save())
-
-        res.status(200).send('123123')
+        res.json(await user.save())
 
     } catch(err){
         res.status(400).json({error: err.message})
