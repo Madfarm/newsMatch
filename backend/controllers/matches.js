@@ -20,10 +20,12 @@ async function create(req,res){
 async function destroy(req,res){
     try {
         let user = await User.findOne({auth_id: req.body.authId});
-        
-        await user.matches.remove(req.params.id)
 
-        res.json(await user.save())
+        console.log(user.matches);
+        
+        await user.matches.remove({_id: req.params.id})
+
+        res.status(200).json(await user.save())
 
     } catch(err){
         res.status(400).json({error: err.message})
