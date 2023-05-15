@@ -33,6 +33,10 @@ export default function ArticlesPage(props) {
 
     if (categoryState && categoryState != "all") {
         articles = articles.filter((article) => article.category.includes(categoryState))
+
+        if (carouselIdx > articles.length){
+            setCarouselIdx(0)
+        }
         
     } 
 
