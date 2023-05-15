@@ -41,6 +41,10 @@ News Match is a mobile responsive full-stack web application that allows users t
 ```
 1. MongoDB
 ```
+### Third-Party API
+```
+1. Currents API
+```
 ### Authentication
 ```
 1. Auth0
