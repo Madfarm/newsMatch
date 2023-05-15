@@ -3,42 +3,9 @@
 > [Deployed Link](https://news-match.vercel.app/)
 
 News Match is a mobile responsive full-stack web application that allows users to sift through news articles with the user experience of swiping through a dating app like Tinder. It takes full advantage of Nextjs's ability to pre-fetch and cache data before the user comes to the site to create an article-scrolling experience that has 0 loading screens.
-
-    News Match is a coding project built by Anthony Scott in 5 days
    
-## B. User Stories
-```
-    As a User, I want to be able to log in
-
-    As a User, I want a landing page, so I'm not just immediately thrown into content
-
-    As a User, I want to be able to sift through articles
-
-    As a User, I want to see a title and a description for each article
-
-    As a User, I want to be able to see an image for each article
-
-    As a User, I want to be able to travel to the article shown
-
-    As a User I want to be able to add articles to my list
-
-    As a User, when I click an article I'd rather it open the article in a new tab
-
-    As a User, I want there to be an animation when I switch articles to make the site more engaging
-
-    As a User, I want to see a default image if there's no image for an article
-
-    As a User, I want to be able to see the articles I've "matched" with
-
-    As a User, I'd like some feedback when a article gets successfully added to my matches
-
-    As a User, I want the site to be mobile responsive
-
-    As a User, I want to be able to add an article to my list without leaving the articles page
-
-    As a User, I want to be able to filter articles by category
- ```     
-## C. Images
+ 
+## B. Images
 >### Using the Application
 ![Landing Page](assets/imgs/landingPage.png)
 ![Articles Page](assets/imgs/articlesPage.png)
@@ -56,7 +23,7 @@ News Match is a mobile responsive full-stack web application that allows users t
 
 
 
-## D. Technologies Used
+## C. Technologies Used
 ### Front End
 ```
 1. React
@@ -91,7 +58,7 @@ News Match is a mobile responsive full-stack web application that allows users t
 ```
 
 
-## E. Getting Started
+## D. Getting Started
 [News Match](https://news-match.vercel.app/)
 1) ### Landing Page 
 	- On the landing page, you'll be greeted with some marketing text and two options to really start navigating: Signing In and clicking 'Get Started'. For our purposes, let's click 'Get Started'
@@ -104,7 +71,7 @@ News Match is a mobile responsive full-stack web application that allows users t
 [Trello](https://trello.com/b/hHe1W5VM/p4-planning)
 
 
-## F. Next Steps
+## E. Next Steps
 ```
 As a User, I don't to see articles I've already put into my list
 ```			
