@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faArrowRight, faArrowLeft, faUpRightFromSquare, faArrowDown } from "@fortawesome/free-solid-svg-icons"
 import Popup from 'reactjs-popup';
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useUser } from "@auth0/nextjs-auth0/client";
 import { useRouter } from "next/navigation";
 import { useCategoryContext } from "../../utilities/categoryContext";
@@ -26,7 +26,6 @@ export default function ArticlesPage(props) {
     const [carouselIdx, setCarouselIdx] = useState(0)
     const [movement, setMovement] = useState(null);
 
-    
     let articles = props.params.articles.news;
     let article;
     
@@ -52,12 +51,13 @@ export default function ArticlesPage(props) {
         article = articles[carouselIdx];
     }
     
-    
-
-
-
     const { user } = useUser();
     
+
+    useEffect(() => {
+        document.title = "Articles Feed";
+    }, []);
+
     async function handleMatchCreate() {
         if(!user) router.push('/api/auth/login')
         if (!article) return
