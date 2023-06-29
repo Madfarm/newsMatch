@@ -108,7 +108,7 @@ export default function ArticlesPage(props) {
         <main id="article-page">
             <article key={article?.id} className={movement == 'right' ? "slide-right" : "slide-left"}>
                 <div className="article-section art-img">
-                    <img src={article?.image != 'None' ? article?.image : '/defaultImage.jpg'} />
+                    <img src={article?.image != 'None' ? article?.image : '/defaultImage.jpg'} alt={article?.image != 'None' ? 'Image from Article' : 'No Image'} />
                 </div>
                 <div className="article-section art-desc">{article?.description}</div>
 
