@@ -18,23 +18,23 @@ export default function Filter(props) {
         <form className={styles.form}>
             <label className={styles.label}>Categories</label>
             <select className={styles.selector} onChange={handleChange} value={categoryState}>
-                <option value="all">all</option>
-                <option value="regional">regional</option>
-                <option value="lifestyle">lifestyle</option>
-                <option value="business">business</option>
-                <option value="general">general</option>
-                <option value="programming">programming</option>
-                <option value="science">science</option>
-                <option value="entertainment">entertainment</option>
-                <option value="world">world</option>
-                <option value="sports">sports</option>
-                <option value="finance">finance</option>
-                <option value="academia">academia</option>
-                <option value="politics">politics</option>
-                <option value="health">health</option>
-                <option value="opinion">opinion</option>
-                <option value="food">food</option>
-                <option value="game">game</option>
+                <option value="all">All</option>
+                <option value="regional">Regional</option>
+                <option value="lifestyle">Lifestyle</option>
+                <option value="business">Business</option>
+                <option value="general">General</option>
+                <option value="programming">Programming</option>
+                <option value="science">Science</option>
+                <option value="entertainment">Entertainment</option>
+                <option value="world">World</option>
+                <option value="sports">Sports</option>
+                <option value="finance">Finance</option>
+                <option value="academia">Academia</option>
+                <option value="politics">Politics</option>
+                <option value="health">Health</option>
+                <option value="opinion">Opinion</option>
+                <option value="food">Food</option>
+                <option value="game">Gaming</option>
             </select>
         </form>
     )
