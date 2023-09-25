@@ -266,6 +266,7 @@ main>article>.art-nav {
 
 .art-nav > div > div > p{
    position: absolute;
+   bottom: 1vh;
    opacity: 0;
 
    transition: opacity 400ms ease;
