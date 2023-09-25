@@ -132,7 +132,7 @@ export default function ArticlesPage(props) {
                             <div >
                                 <div onClick={handleMatchCreate}>
                                     <p>Add to matches</p>
-                                    <FontAwesomeIcon id="down-arrow" icon={faHeart} style={{ color: "#ffffff" }} size={"2xl"} />
+                                    <FontAwesomeIcon id="match-button" icon={faHeart} style={{ color: "#ffffff" }} size={"2xl"} />
                                 </div>
                             </div>
                         )}

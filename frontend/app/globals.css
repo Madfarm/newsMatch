@@ -292,14 +292,18 @@ main>article>.art-nav {
     animation: popup 1s linear forwards;
 }
 
-.art-nav > div:hover > div > #down-arrow{
-    animation: down-arrow 0.5s linear infinite
+.art-nav > div:hover > div > #match-button{
+    animation: match-button 0.5s linear infinite;
+    animation-fill-mode: forwards;
 }
 
-@keyframes down-arrow {
-    0% {transform: translateY(-3vh);}
-   50% {transform: translateY(3vh);}
-  100% {transform: translateY(6vh);}
+@keyframes match-button {
+    /* 0% {transform: translateY(7.5vh);} */
+   30% {transform: scale(1.4);}
+    50% {transform: scale(1.8);}
+  60% {transform: scale(1.4);}
+  80% {transform: scale(1.8);}
+  100% {transform: scale(1);}
 }
 
 @keyframes slideright {
