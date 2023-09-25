@@ -2,7 +2,7 @@
 
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faArrowRight, faArrowLeft, faUpRightFromSquare, faArrowDown } from "@fortawesome/free-solid-svg-icons"
+import { faArrowRight, faArrowLeft, faArrowDown, faHeart } from "@fortawesome/free-solid-svg-icons"
 import Popup from 'reactjs-popup';
 
 import { useState } from "react";
@@ -78,7 +78,7 @@ export default function ArticlesPage(props) {
 
 
     function handleNavClick(direction) {
-        
+
         if (direction == "right") {
             setMovement(direction)
             
@@ -132,7 +132,7 @@ export default function ArticlesPage(props) {
                             <div >
                                 <div onClick={handleMatchCreate}>
                                     <p>Add to matches</p>
-                                    <FontAwesomeIcon id="down-arrow" icon={faArrowDown} style={{ color: "#ffffff" }} size={"2xl"} />
+                                    <FontAwesomeIcon id="down-arrow" icon={faHeart} style={{ color: "#ffffff" }} size={"2xl"} />
                                 </div>
                             </div>
                         )}
