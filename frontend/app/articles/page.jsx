@@ -11,7 +11,7 @@ import { useRouter } from "next/navigation";
 import { useCategoryContext } from "../../utilities/categoryContext";
 
 
-import { create } from '../../utilities/backend-api';
+import { createNewMatch } from '../../utilities/backend-api';
 import { redirect } from "next/navigation";
 
 
@@ -70,7 +70,7 @@ export default function ArticlesPage(props) {
         }
 
         try {
-            await create(parsedArticle, user.sub)
+            await createNewMatch(parsedArticle, user.sub)
         } catch (err) {
             console.log(err)
         }
