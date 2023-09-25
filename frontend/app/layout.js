@@ -21,12 +21,9 @@ const getArticle = async () => {
 
 
 export default async function RootLayout({ children, params }) {
-  // //const articles = await getArticle();
-  // params.articles = articles;
+  const articles = await getArticle();
+  params.articles = articles;
 
-  params.articles = {
-    news: []
-  }
 
 
 
