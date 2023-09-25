@@ -78,8 +78,7 @@ export default function ArticlesPage(props) {
 
 
     function handleNavClick(direction) {
-
-
+        
         if (direction == "right") {
             setMovement(direction)
             
