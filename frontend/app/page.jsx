@@ -1,9 +1,6 @@
 import Link from "next/link"
-import { dummyArticles } from "../utilities/dummyData"
 
 export default function HomePage(){
-    console.log(dummyArticles);
-
     return (
         <main id="homepage">
             <h1>Fall in love with the news again</h1>

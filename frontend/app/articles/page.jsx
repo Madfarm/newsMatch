@@ -22,7 +22,7 @@ import { useArticlePage } from "./articles.hooks";
 
 
 export default function ArticlesPage(props) {
-    const { handleMatchCreate, handleNavClick, article, movement } = useArticlePage(props.params.articles.news);
+    const { handleMatchCreate, handleNavClick, article, movement } = useArticlePage(props.params.articles);
     
 
     return (

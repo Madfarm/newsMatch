@@ -8,19 +8,25 @@ config.autoAddCss = false
 import { CategoryContextProvider } from '../utilities/categoryContext.jsx'
 import { UserProvider } from '@auth0/nextjs-auth0/client'
 import { inDevelopmentEnvironment } from "../utilities/devEnvironmentChecker"
+import { promises as fs } from 'fs';
 
 
 const getArticle = async (isDev) => {
+
   if (isDev) {
-    var url = 'frontend/utilities/dummyData.json'
-  } else {
+    const file = await fs.readFile(process.cwd() + '/utilities/dummyData.json', 'utf8');
+    const data = JSON.parse(file);
+    console.log(data);
+    return data;
+  } 
+  else {
     var url = 'https://api.currentsapi.services/v1/search?langauge=us&page_size=200&apiKey=_nzV85Gpfc5q7Qq_QuQ1rLNUTSKIh9r7uOtBD-ZLnczq0qNm';
+    const res = await fetch(url, {next :{ revalidate: 3600 }});
+    const data = await res.json()
+    return data.news;
   }
   
 
-  const res = await fetch(url, {next :{ revalidate: 3600 }});
-  const data = await res.json()
-  return data
 }
 
 
