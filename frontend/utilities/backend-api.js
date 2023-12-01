@@ -1,6 +1,6 @@
 const BASE_URL = 'https://newsmatch-backend.herokuapp.com/user'
 
-export async function create(newMatch, authID){
+export async function createNewMatch(newMatch, authID){
     const options = {
         method: "POST",
         headers: {
