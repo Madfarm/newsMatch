@@ -1,5 +1,17 @@
-
-export const dummyArticles: ArticlesType = [
+[
+        {
+            "id": "be0fa3e9-cb11-46b4-80ae-83ebed8b213",
+            "title": "Mcshit FArt!",
+            "description": "sugma fill me soon be shuttered too.\n\n\n...",
+            "url": "https://www.voanews.com/a/about-half-of-nicaragua-s-population-wants-to-emigrate-study-says-/7379826.html",
+            "author": "Associated Press",
+            "image": "None",
+            "language": "es",
+            "category": [
+                "world"
+            ],
+            "published": "2023-12-01 04:22:53 +0000"
+        },
         {
             "id": "be0fa3e9-cb11-46b4-80ae-83fbbed8b213",
             "title": "About Half of Nicaragua's Population Wants to Emigrate, Study Says",
@@ -2659,4 +2671,5 @@ export const dummyArticles: ArticlesType = [
             ],
             "published": "2023-12-01 01:14:00 +0000"
         }
-    ];
+    ]
+    
