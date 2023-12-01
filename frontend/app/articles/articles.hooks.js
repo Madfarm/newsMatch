@@ -82,5 +82,5 @@ export const useArticlePage = (articles) => {
         }
     }
 
-    return { article, handleMatchCreate, handleNavClick };
+    return { article, movement, handleMatchCreate, handleNavClick };
 }

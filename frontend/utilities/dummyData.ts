@@ -1,5 +1,5 @@
 
-const dummyArticles: ArticlesType = [
+export const dummyArticles: ArticlesType = [
         {
             "id": "be0fa3e9-cb11-46b4-80ae-83fbbed8b213",
             "title": "About Half of Nicaragua's Population Wants to Emigrate, Study Says",
