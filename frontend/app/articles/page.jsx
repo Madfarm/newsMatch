@@ -13,6 +13,7 @@ import { useCategoryContext } from "../../utilities/categoryContext";
 
 import { createNewMatch } from '../../utilities/backend-api';
 import { redirect } from "next/navigation";
+import { useArticlePage } from "./articles.hooks";
 
 
 
@@ -21,87 +22,8 @@ import { redirect } from "next/navigation";
 
 
 export default function ArticlesPage(props) {
-    const { categoryState } = useCategoryContext();
-    const router = useRouter();
-    const [carouselIdx, setCarouselIdx] = useState(0)
-    const [movement, setMovement] = useState(null);
-
-    let articles = props.params.articles.news;
-    let article;
+    const { handleMatchCreate, handleNavClick, article, movement } = useArticlePage(props.params.articles);
     
-
-    if (categoryState && categoryState != "all") {
-        articles = articles.filter((article) => article.category.includes(categoryState))
-
-        if (carouselIdx > articles.length){
-            setCarouselIdx(0)
-        }
-        
-    } 
-
-
-    if (articles.length === 0) {
-        article = {
-            title: "Sorry, no articles in this category found",
-            description: "Try another category to find articles",
-            url : "",
-            image: '/defaultImage.jpg'
-        }
-    } else {
-        article = articles[carouselIdx];
-    }
-    
-    const { user } = useUser();
-    
-
-    useEffect(() => {
-        document.title = "Articles Feed";
-    }, []);
-
-    async function handleMatchCreate() {
-        if(!user) router.push('/api/auth/login')
-        if (!article) return
-        
-        let parsedArticle = {
-            title: article.title,
-            description: article.description,
-            url: article.url,
-            image: article.image
-        }
-
-        try {
-            await createNewMatch(parsedArticle, user.sub)
-        } catch (err) {
-            console.log(err)
-        }
-    }
-
-
-    function handleNavClick(direction) {
-
-        if (direction == "right") {
-            setMovement(direction)
-            
-            if (carouselIdx == articles.length - 1) {
-                setCarouselIdx(0)
-                return
-            }
-
-            setCarouselIdx(carouselIdx + 1)
-
-        } else {
-            setMovement(direction)
-
-            if (carouselIdx == 0) {
-                setCarouselIdx(articles.length - 1)
-                return
-            }
-            
-            setCarouselIdx(carouselIdx - 1)
-        }
-    }
-
-
 
     return (
         <main id="article-page">
