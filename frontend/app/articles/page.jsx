@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faArrowRight, faArrowLeft, faArrowDown, faHeart } from "@fortawesome/free-solid-svg-icons"
 import Popup from 'reactjs-popup';
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useUser } from "@auth0/nextjs-auth0/client";
 import { useRouter } from "next/navigation";
 import { useCategoryContext } from "../../utilities/categoryContext";
@@ -29,7 +29,7 @@ export default function ArticlesPage(props) {
         <main id="article-page">
             <article key={article?.id} className={movement == 'right' ? "slide-right" : "slide-left"}>
                 <div className="article-section art-img">
-                    <img src={article?.image != 'None' ? article?.image : '/defaultImage.jpg'} />
+                    <img src={article?.image != 'None' ? article?.image : '/defaultImage.jpg'} alt={article?.image != 'None' ? 'Image from Article' : 'No Image'} />
                 </div>
                 <div className="article-section art-desc">{article?.description}</div>
 

@@ -23,7 +23,11 @@ export default async function MatchesPage(){
 
     if(!user) redirect('/api/auth/login')
 
-    let matches = await getMatches(user)
+    let matches = await getMatches(user);
+
+    useEffect(() => {
+        document.title = "Your Matches";
+    }, []);
 
 
     async function handleClick(user, articleid){
