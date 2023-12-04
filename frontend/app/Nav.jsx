@@ -6,7 +6,7 @@ import { faList, faBars } from "@fortawesome/free-solid-svg-icons"
 import { useUser } from "@auth0/nextjs-auth0/client"
 import { useState } from "react";
 import { usePathname } from 'next/navigation'
-import Filter from "./Filter"
+import CategoryFilter from "./components/CategoryFilter/CategoryFilter"
 
 export default function Nav(props) {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -31,7 +31,7 @@ export default function Nav(props) {
                 </div>
 
                 <div className={styles.navSection} id="navLists">
-                    {pathname == "/articles" && <Filter />}
+                    {pathname == "/articles" && <CategoryFilter />}
                 </div>
 
 

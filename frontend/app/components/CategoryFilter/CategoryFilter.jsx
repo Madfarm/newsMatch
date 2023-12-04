@@ -3,9 +3,9 @@
 import styles from './Filter.module.css'
 
 
-import { useCategoryContext } from "../utilities/categoryContext"
+import { useCategoryContext } from "../../../utilities/categoryContext"
 
-export default function Filter(props) {
+export default function CategoryFilter(props) {
     const { categoryState, setCategoryState } = useCategoryContext();
 
  
