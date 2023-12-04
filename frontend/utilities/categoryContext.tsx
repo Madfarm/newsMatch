@@ -1,11 +1,14 @@
 "use client"
-
+import React from "react";
 import { createContext, useContext, useState } from "react"
 
-const CategoryContext = createContext({})
+export const CategoryContext = createContext<CategoryContextType>({
+    categoryState: 'all',
+    setCategoryState: () => null
+})
 
 export function CategoryContextProvider({ children }){
-    const [categoryState, setCategoryState] = useState(undefined);
+    const [categoryState, setCategoryState] = useState<string>('all');
 
     return (
         <CategoryContext.Provider value={{ categoryState, setCategoryState }}>

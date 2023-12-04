@@ -3,8 +3,10 @@
 import styles from './CategoryFilter.module.css'
 import { useCategoryContext } from "../../../utilities/categoryContext"
 
+
 export default function CategoryFilter(props) {
-    const { categoryState, setCategoryState } = useCategoryContext();
+    const { categoryState, setCategoryState} = useCategoryContext();
+    
 
     function handleChange(e){
         setCategoryState(e.target.value)
@@ -14,6 +16,9 @@ export default function CategoryFilter(props) {
         <form className={styles.form}>
             <label className={styles.label}>Categories</label>
             <select className={styles.selector} onChange={handleChange} value={categoryState}>
+                {/* {Object.keys(validCategories).map((key) => {
+                    <option value={key}>{key}</option>
+                })} */}
                 <option value="all">All</option>
                 <option value="regional">Regional</option>
                 <option value="lifestyle">Lifestyle</option>
