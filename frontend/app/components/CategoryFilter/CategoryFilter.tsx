@@ -3,7 +3,7 @@
 import styles from './CategoryFilter.module.css'
 import { useCategoryContext } from "../../../utilities/categoryContext"
 import { validCategories } from '../../../types/CategoryTypes';
-import { VALID_LOADERS } from 'next/dist/shared/lib/image-config';
+import { capitalizeFirstLetter } from '../../../utilities/capitalizeFirstLetter';
 
 
 export default function CategoryFilter(props) {
@@ -22,7 +22,7 @@ export default function CategoryFilter(props) {
             <select className={styles.selector} onChange={handleChange} value={categoryState}>
                 {Object.keys(validCategories).map((val) =>
                     <option value={val}>
-                        {val}
+                        {capitalizeFirstLetter(val)}
                     </option>
                 )}
             </select>
