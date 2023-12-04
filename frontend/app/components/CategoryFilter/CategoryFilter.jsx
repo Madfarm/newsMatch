@@ -1,6 +1,6 @@
 "use client"
 
-import styles from './Filter.module.css'
+import styles from './CategoryFilter.module.css'
 
 
 import { useCategoryContext } from "../../../utilities/categoryContext"
