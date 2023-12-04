@@ -1,19 +1,15 @@
 "use client"
 
 import styles from './CategoryFilter.module.css'
-
-
 import { useCategoryContext } from "../../../utilities/categoryContext"
 
 export default function CategoryFilter(props) {
     const { categoryState, setCategoryState } = useCategoryContext();
 
- 
-
     function handleChange(e){
         setCategoryState(e.target.value)
     }
-
+    
     return (
         <form className={styles.form}>
             <label className={styles.label}>Categories</label>
