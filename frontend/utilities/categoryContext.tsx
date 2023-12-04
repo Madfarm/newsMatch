@@ -1,6 +1,7 @@
 "use client"
 import React from "react";
 import { createContext, useContext, useState } from "react"
+import { CategoryContextType } from "../types/CategoryTypes";
 
 export const CategoryContext = createContext<CategoryContextType>({
     categoryState: 'all',

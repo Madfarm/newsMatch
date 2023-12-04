@@ -1,24 +1,24 @@
-enum validCategories {
-    All,
-    Regional,
-    Lifestyle,
-    Business,
-    General,
-    Programming,
-    Science,
-    Entertainment,
-    World,
-    sports,
-    finance,
-    academia,
-    poltiics,
-    health,
-    opinion,
-    food,
-    game
+export enum validCategories {
+    All = "All",
+    Regional = "Regional",
+    Lifestyle = "Lifestyle",
+    Business = "Business",
+    General = "General",
+    Programming = "Programming",
+    Science = "Science",
+    Entertainment = "Entertainment",
+    World = "World",
+    Sports = "Sports",
+    Finance = "Finance",
+    Academia = "Academia",
+    Poltiics = "Politics",
+    Health = "Health",
+    Opinion = "Opinion",
+    Food = "Food",
+    Game = "Game"
 }
 
-type CategoryContextType = {
+export type CategoryContextType = {
     categoryState: string;
     setCategoryState: (value: React.SetStateAction<string>) => void;
 }

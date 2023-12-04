@@ -22,7 +22,6 @@ export const useArticlePage = (articles) => {
         
     } 
 
-    console.log(articles);
 
     if (articles.length === 0) {
         article = {
