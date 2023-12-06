@@ -6,7 +6,7 @@ import { faList, faBars } from "@fortawesome/free-solid-svg-icons"
 import { useUser } from "@auth0/nextjs-auth0/client"
 import { useState } from "react";
 import { usePathname } from 'next/navigation'
-import CategoryFilter from "./components/CategoryFilter/CategoryFilter"
+import CategoryFilter from "../CategoryFilter/CategoryFilter"
 
 export default function Nav(props) {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
