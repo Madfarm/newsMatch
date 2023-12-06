@@ -1,22 +1,21 @@
-import Nav from "./Nav"
+import Nav from "./components/Nav/Nav"
 import './globals.css'
 
 import { config } from '@fortawesome/fontawesome-svg-core'
 import '@fortawesome/fontawesome-svg-core/styles.css'
 config.autoAddCss = false
 
-import { CategoryContextProvider } from '../utilities/categoryContext.jsx'
+import { CategoryContextProvider } from '../utilities/categoryContext'
 import { UserProvider } from '@auth0/nextjs-auth0/client'
 import { inDevelopmentEnvironment } from "../utilities/devEnvironmentChecker"
 import { promises as fs } from 'fs';
 
 
-const getArticle = async (isDev) => {
+const getArticle = async (isDev: boolean) => {
 
   if (isDev) {
-    const file = await fs.readFile(process.cwd() + '/utilities/dummyData.json', 'utf8');
+    const file = await fs.readFile(process.cwd() + '/utilities/mockData.json', 'utf8');
     const data = JSON.parse(file);
-    console.log(data);
     return data;
   } 
   else {

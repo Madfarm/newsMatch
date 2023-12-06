@@ -4,7 +4,7 @@ import Link from "next/link"
 export const metadata = {
     title: 'News Match',
     description: 'The homepage of News Match',
-  }
+}
 
 
 export default function HomePage(){
