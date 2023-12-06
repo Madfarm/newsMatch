@@ -11,7 +11,7 @@ import { inDevelopmentEnvironment } from "../utilities/devEnvironmentChecker"
 import { promises as fs } from 'fs';
 
 
-const getArticle = async (isDev) => {
+const getArticle = async (isDev: boolean) => {
 
   if (isDev) {
     const file = await fs.readFile(process.cwd() + '/utilities/mockData.json', 'utf8');
