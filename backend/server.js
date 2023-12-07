@@ -11,7 +11,7 @@ const matchRouter =  require('./routes/matches-router');
 
 const app = express()
 
-const { PORT } = process.env 
+// const { PORT } = process.env 
 
 
 app.use(express.urlencoded({extended: true}))
@@ -35,6 +35,6 @@ app.get('/', (req,res)=>res.send('Hitting home route'))
 
 
 
-app.listen(PORT, ()=>console.log(`Listening on PORT: ${PORT}`))
+// app.listen(PORT, ()=>console.log(`Listening on PORT: ${PORT}`))
 
 module.exports  = app;
