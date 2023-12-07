@@ -3,7 +3,7 @@ const {MONGODB_URI} = process.env
 
 
 mongoose.set('strictQuery', true);
-mongoose.connect(MONGODB_URI)
+mongoose.connect(MONGODB_URI, { server: { socketOptions: { connectTimeoutMS: 10000 } }})
 
 // Connection Events
 mongoose.connection
