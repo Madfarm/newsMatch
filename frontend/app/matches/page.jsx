@@ -3,7 +3,7 @@
 import { destroyMatch, detail } from '../../utilities/backend-api'
 import { useUser, withPageAuthRequired, WithPageAuthRequired } from '@auth0/nextjs-auth0/client'
 import styles from './matches.module.css';
-import { redirect, useRouter } from 'next/navigation';
+import { redirect } from 'next/navigation';
 import { useEffect, useState } from 'react';
 
 
@@ -18,7 +18,6 @@ async function getMatches(user){
 
 
 export default function MatchesPage(){
-    const router = useRouter();
     const { user } = useUser();
     const [matches, setMatches] = useState([]);
 
@@ -28,18 +27,14 @@ export default function MatchesPage(){
     useEffect(() => {
         document.title = "Your Matches";
 
-        
-
         getMatches(user)
         .then(res => setMatches(res))   
-        
     }, [matches]);
 
 
     async function handleClick(user, articleid){
-        let deletedMatch = await deleteMatch(user, articleid)
-        console.log("woot");
-        router.refresh();
+        let deletedMatch = await deleteMatch(user, articleid);
+        setMatches(deletedMatch.matches);
     }
 
 
@@ -49,7 +44,7 @@ export default function MatchesPage(){
         <section className={styles.container}>
             {matches?.map((article)=> {
                 return (
-                    <a onClick={()=>handleClick(user, article._id)} href={article.url} target="_blank" rel="noopener noreferrer">
+                    <a key={article._id} onClick={()=>handleClick(user, article._id)} href={article.url} target="_blank" rel="noopener noreferrer">
                         <div className={styles.card}>
                             <div className={styles.cardTitle}>
                                 <h3>{article.title}</h3>

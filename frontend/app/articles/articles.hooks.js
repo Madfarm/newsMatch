@@ -40,7 +40,7 @@ export const useArticlePage = (articles) => {
 
 
     const { user } = useUser();
-    console.log(user);
+    
     
     async function handleMatchCreate() {
         if(!user) router.push('/api/auth/login')
