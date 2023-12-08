@@ -1,4 +1,4 @@
-const BASE_URL = 'https://newsmatch-backend.herokuapp.com/user'
+const BASE_URL = 'https://iylm6bj6p5.execute-api.us-east-1.amazonaws.com/prod/user'
 
 export async function createNewMatch(newMatch, authID){
     const options = {

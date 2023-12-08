@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useUser } from "@auth0/nextjs-auth0/client";
 import { useRouter } from "next/navigation";
 import { useCategoryContext } from "../../utilities/categoryContext";
+import { createNewMatch } from '../../utilities/backend-api';
 
 export const useArticlePage = (articles) => {
     const { categoryState } = useCategoryContext();
@@ -39,6 +40,7 @@ export const useArticlePage = (articles) => {
 
 
     const { user } = useUser();
+    console.log(user);
     
     async function handleMatchCreate() {
         if(!user) router.push('/api/auth/login')
@@ -52,7 +54,7 @@ export const useArticlePage = (articles) => {
         }
 
         try {
-            await create(parsedArticle, user.sub)
+            await createNewMatch(parsedArticle, user.sub)
         } catch (err) {
             console.log(err)
         }

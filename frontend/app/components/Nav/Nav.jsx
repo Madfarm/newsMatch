@@ -13,6 +13,8 @@ export default function Nav(props) {
     const { user, error, isLoading } = useUser();
     let pathname = usePathname()
 
+    console.log(user);
+
 
     function handleHamburger() {
         setMobileMenuOpen(!mobileMenuOpen);

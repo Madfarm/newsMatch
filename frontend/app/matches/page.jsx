@@ -4,10 +4,10 @@ import { destroyMatch, detail } from '../../utilities/backend-api'
 import { useUser, withPageAuthRequired, WithPageAuthRequired } from '@auth0/nextjs-auth0/client'
 import styles from './matches.module.css';
 import { redirect, useRouter } from 'next/navigation';
+import { useEffect } from 'react';
 
 
 async function deleteMatch(user, articleid){
-    console.log('1')
     return await destroyMatch(user.sub, articleid)
 }
 
@@ -17,13 +17,14 @@ async function getMatches(user){
 }
 
 
-export default async function MatchesPage(){
+export default function MatchesPage(){
     const router = useRouter();
     const { user } = useUser();
 
     if(!user) redirect('/api/auth/login')
 
-    let matches = await getMatches(user);
+    let matches = getMatches(user);
+    console.log(matches);
 
     useEffect(() => {
         document.title = "Your Matches";

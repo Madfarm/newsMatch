@@ -11,7 +11,7 @@ import { useRouter } from "next/navigation";
 import { useCategoryContext } from "../../utilities/categoryContext";
 
 
-import { createNewMatch } from '../../utilities/backend-api';
+
 import { redirect } from "next/navigation";
 import { useArticlePage } from "./articles.hooks";
 
@@ -24,6 +24,8 @@ import { useArticlePage } from "./articles.hooks";
 export default function ArticlesPage(props) {
     const { handleMatchCreate, handleNavClick, article, movement } = useArticlePage(props.params.articles);
     
+    const { user } = useUser();
+    console.log(user);
 
     return (
         <main id="article-page">
